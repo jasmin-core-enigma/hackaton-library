@@ -1,0 +1,21 @@
+<!-- templates/results.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results</h1>
+    <ul>
+        {% for result in results %}
+        <li>
+            <strong>{{ result.title }}</strong> ({{ result.published_date }})
+            {% if result.movie_info %}
+            - Movie: {{ result.movie_info.title }} ({{ result.movie_info.year }})
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="/">Search Again</a>
+</body>
+</html>
